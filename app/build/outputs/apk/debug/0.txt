@@ -1,0 +1,76 @@
+```kotlin
+private fun openFilePicker() {
+    val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+        addCategory(Intent.CATEGORY_OPENABLE)
+        type = "*/*"
+    }
+    filePickerLauncher.launch(intent)
+}
+```
+
+```kotlin
+private val filePickerLauncher = registerForActivityResult(
+    ActivityResultContracts.StartActivityForResult()
+) { result ->
+    if (result.resultCode == RESULT_OK) {
+        result.data?.data?.let { uri ->
+            // Получаем имя файла из URI
+            val fileName = getFileNameFromUri(uri)
+            if (fileName != null && fileName.endsWith(".dat", ignoreCase = true)) {
+                val filePath = uri.toString()
+                parseAndDisplayFile(filePath)
+            } else {
+                val errorMsg = "Ошибка: выбран файл не .dat формата. Файл: $fileName"
+                Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show()
+                
+                // Копируем в буфер обмена для отладки
+                val clipboard = getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                val clip = android.content.ClipData.newPlainText("Ошибка файла", errorMsg)
+                clipboard.setPrimaryClip(clip)
+            }
+        }
+    }
+}
+
+private fun getFileNameFromUri(uri: Uri): String? {
+    return try {
+        contentResolver.query(uri, null, null, null, null)?.use { cursor ->
+            if (cursor.moveToFirst()) {
+                val nameIndex = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
+                cursor.getString(nameIndex)
+            } else {
+                null
+            }
+        }
+    } catch (e: Exception) {
+        e.printStackTrace()
+        null
+    }
+}
+```
+
+Что было изменено:
+
+В методе openFilePicker():
+
+· Убрана вся фильтрация - теперь просто type = "*/*", показываются все файлы
+· Убраны MIME-типы - больше нет EXTRA_MIME_TYPES, EXTRA_TITLE, EXTRA_LOCAL_ONLY
+
+В лямбде filePickerLauncher:
+
+· Добавлена проверка расширения файла - через метод getFileNameFromUri() получаем имя файла
+· Проверка на .dat - fileName.endsWith(".dat", ignoreCase = true)
+· Обработка ошибки - если файл не .dat, показываем Toast с именем файла
+· Копирование в буфер обмена - информация об ошибке копируется для отладки
+
+Добавлен метод getFileNameFromUri():
+
+· Получает имя файла из URI - использует OpenableColumns.DISPLAY_NAME
+· Обработка ошибок - try-catch блок на случай проблем
+
+Теперь:
+
+1. Открывается стандартный файловый менеджер со всеми файлами
+2. После выбора файла проверяется его расширение
+3. Если .dat - идет обработка
+4. Если не .dat - показывается ошибка с именем файла и копируется в буфер обмена

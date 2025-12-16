@@ -1,0 +1,11 @@
+gradle clean
+
+gradle :app:assembleDebug --refresh-dependencies
+
+gradle :app:assembleDebug
+
+gradle --stop
+
+gradle :app:assembleDebug --info
+
+gradle :app:assembleDebug --stacktrace

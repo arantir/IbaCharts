@@ -1,0 +1,206 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.mychartsapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:5:5-80
+11-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:5:22-77
+12
+13    <permission
+13-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\8bbbbc9b60db9ee8db8521071b38f69e\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\8bbbbc9b60db9ee8db8521071b38f69e\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\8bbbbc9b60db9ee8db8521071b38f69e\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Убрали MANAGE_EXTERNAL_STORAGE - это опасное разрешение, используйте только если необходимо -->
+17-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\8bbbbc9b60db9ee8db8521071b38f69e\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\8bbbbc9b60db9ee8db8521071b38f69e\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+18    <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
+19    <application
+19-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:9:5-63:19
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\8bbbbc9b60db9ee8db8521071b38f69e\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+21        android:debuggable="true"
+22        android:label="@string/app_name"
+22-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:10:9-41
+23        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+23-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:11:9-65
+24        <activity
+24-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:12:9-19:20
+25            android:name="com.example.mychartsapp.MainActivity"
+25-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:13:13-41
+26            android:exported="true" >
+26-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:14:13-36
+27            <intent-filter>
+27-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:15:13-18:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:16:17-69
+28-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:16:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:17:17-77
+30-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:17:27-74
+31            </intent-filter>
+32        </activity>
+33        <activity
+33-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:21:9-23:40
+34            android:name="com.example.mychartsapp.NormalChartActivity"
+34-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:22:13-48
+35            android:exported="false" />
+35-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:23:13-37
+36        <activity
+36-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:25:9-50:20
+37            android:name="com.example.mychartsapp.IBAChartActivity"
+37-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:26:13-45
+38            android:exported="true" >
+38-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:27:13-36
+39
+40            <!-- Сохраняем intent-filter для открытия .dat файлов -->
+41            <intent-filter>
+41-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:30:13-37:29
+42                <action android:name="android.intent.action.VIEW" />
+42-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:31:17-69
+42-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:31:25-66
+43
+44                <category android:name="android.intent.category.DEFAULT" />
+44-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:32:17-76
+44-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:32:27-73
+45                <category android:name="android.intent.category.BROWSABLE" />
+45-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:33:17-78
+45-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:33:27-75
+46
+47                <data android:mimeType="application/octet-stream" />
+47-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+47-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:23-66
+48                <data android:scheme="content" />
+48-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+48-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:35:23-47
+49                <data android:host="*" />
+49-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+49-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:36:23-39
+50            </intent-filter>
+51
+52            <!-- Альтернативный фильтр для прямой работы с файлами -->
+53            <intent-filter>
+53-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:40:13-48:29
+54                <action android:name="android.intent.action.VIEW" />
+54-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:31:17-69
+54-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:31:25-66
+55
+56                <category android:name="android.intent.category.DEFAULT" />
+56-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:32:17-76
+56-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:32:27-73
+57                <category android:name="android.intent.category.BROWSABLE" />
+57-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:33:17-78
+57-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:33:27-75
+58
+59                <data android:scheme="file" />
+59-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+59-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:35:23-47
+60                <data android:host="*" />
+60-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+60-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:36:23-39
+61                <data android:pathPattern=".*\\.dat" />
+61-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+61-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:46:23-53
+62                <data android:mimeType="*/*" />
+62-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:17-69
+62-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:34:23-66
+63            </intent-filter>
+64        </activity>
+65        <activity
+65-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:52:9-54:40
+66            android:name="com.example.mychartsapp.SettingsActivity"
+66-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:53:13-45
+67            android:exported="false" />
+67-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:54:13-37
+68        <activity
+68-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:56:9-58:40
+69            android:name="com.example.mychartsapp.NormalChartSettingsActivity"
+69-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:57:13-56
+70            android:exported="false" />
+70-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:58:13-37
+71        <activity
+71-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:60:9-62:40
+72            android:name="com.example.mychartsapp.IBAChartSettingsActivity"
+72-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:61:13-53
+73            android:exported="false" />
+73-->G:\maul ad\androidPrj\charts\app\src\main\AndroidManifest.xml:62:13-37
+74
+75        <provider
+75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+76            android:name="androidx.startup.InitializationProvider"
+76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+77            android:authorities="com.example.mychartsapp.androidx-startup"
+77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+78            android:exported="false" >
+78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+79            <meta-data
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+81                android:value="androidx.startup" />
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\00c7abd70991e1012a069d8e57d2f8db\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+82            <meta-data
+82-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\admin\.gradle\caches\transforms-3\ae9aaf09b02d7cced2d0272949c17a47\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+83                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+83-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\admin\.gradle\caches\transforms-3\ae9aaf09b02d7cced2d0272949c17a47\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+84                android:value="androidx.startup" />
+84-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\admin\.gradle\caches\transforms-3\ae9aaf09b02d7cced2d0272949c17a47\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+85            <meta-data
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+86                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+87                android:value="androidx.startup" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+88        </provider>
+89
+90        <receiver
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+91            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+92            android:directBootAware="false"
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+93            android:enabled="true"
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+94            android:exported="true"
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+95            android:permission="android.permission.DUMP" >
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+97                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+98            </intent-filter>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+100                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+101            </intent-filter>
+102            <intent-filter>
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+103                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+104            </intent-filter>
+105            <intent-filter>
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+106                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\transforms-3\1bd22c99918a19a15abef1089bb61241\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+107            </intent-filter>
+108        </receiver>
+109    </application>
+110
+111</manifest>
