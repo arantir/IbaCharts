@@ -1,4 +1,10 @@
-#Tue Dec 16 16:18:25 YEKT 2025
-base.0=G\:\\maul ad\\androidPrj\\charts\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Wed May 06 15:04:05 YEKT 2026
+base.0=/home/alexander/prj/android/IbaCharts/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/home/alexander/prj/android/IbaCharts/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/home/alexander/prj/android/IbaCharts/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 path.0=classes.dex
+path.1=0/classes.dex
+path.2=0/classes.dex
 renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

@@ -362,6 +362,8 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color call_notification_answer_color
+color call_notification_decline_color
 color color_background
 color color_blue
 color color_cyan
@@ -627,6 +629,12 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable ic_call_answer
+drawable ic_call_answer_low
+drawable ic_call_answer_video
+drawable ic_call_answer_video_low
+drawable ic_call_decline
+drawable ic_call_decline_low
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -635,6 +643,7 @@ drawable notification_bg_low_pressed
 drawable notification_bg_normal
 drawable notification_bg_normal_pressed
 drawable notification_icon_background
+drawable notification_oversize_large_icon_bg
 drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
@@ -733,6 +742,7 @@ id detailsTextView
 id dialog_button
 id disableHome
 id edit_query
+id edit_text_id
 id end
 id exitBtn
 id expand_activities_button
@@ -740,6 +750,7 @@ id expanded_menu
 id forever
 id fragment_container_view_tag
 id group_divider
+id hide_ime_id
 id home
 id homeAsUp
 id ibaChartBtn
@@ -773,6 +784,7 @@ id parentPanel
 id progress_circular
 id progress_horizontal
 id radio
+id report_drawn
 id right_icon
 id right_side
 id saveBtn
@@ -836,6 +848,7 @@ id unchecked
 id uniform
 id up
 id useLogo
+id versionText
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
@@ -890,6 +903,8 @@ layout activity_normal_chart
 layout activity_normal_chart_settings
 layout activity_settings
 layout custom_dialog
+layout ime_base_split_test_activity
+layout ime_secondary_split_test_activity
 layout item_file
 layout notification_action
 layout notification_action_tombstone
@@ -931,6 +946,13 @@ string abc_toolbar_collapse_description
 string androidx_startup
 string app_name
 string back_button
+string call_notification_answer_action
+string call_notification_answer_video_action
+string call_notification_decline_action
+string call_notification_hang_up_action
+string call_notification_incoming_text
+string call_notification_ongoing_text
+string call_notification_screening_text
 string chart_error_message
 string clear_chart_button
 string clear_chart_toast

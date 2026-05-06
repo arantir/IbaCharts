@@ -1,2 +1,5 @@
 rootProject.name = "charts"
 include ':app'
+include ':domain'
+include ':data'
+include ':presentation'

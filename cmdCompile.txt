@@ -1,0 +1,5 @@
+# Команда для сборки APK
+cd /home/alexander/prj/android/IbaCharts && gradle :app:assembleDebug
+
+# Путь к готовому APK после успешной сборки:
+/home/alexander/prj/android/IbaCharts/app/build/outputs/apk/debug/
