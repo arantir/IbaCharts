@@ -13,13 +13,26 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.listener.OnChartGestureListener
 import com.github.mikephil.charting.listener.ChartTouchListener
 
+/**
+ * Менеджер для управления графиками MPAndroidChart.
+ * Обеспечивает синхронизацию масштабирования и прокрутки между несколькими графиками.
+ *
+ * @param context Контекст приложения для доступа к ресурсам
+ */
 class MPAndroidChartManager(private val context: Context) {
 
+    /** Список графиков, участвующих в синхронизации */
     private val synchronizedCharts = mutableListOf<LineChart>()
+    
+    /** Флаг предотвращения рекурсивной синхронизации */
     private var isSyncing = false
 
     /**
-     * Устанавливает график и его данные.
+     * Настраивает график с демонстрационными данными синусоиды.
+     *
+     * @param chart График для настройки
+     * @param title Название набора данных
+     * @param lineColor Цвет линии графика
      */
     fun setupChart(chart: LineChart, title: String, lineColor: Int) {
         configureChartAppearance(chart)
@@ -29,18 +42,23 @@ class MPAndroidChartManager(private val context: Context) {
     }
 
     /**
-     * Общие настройки графика.
+     * Выполняет общие настройки внешнего вида графика.
+     *
+     * @param chart График для настройки
      */
     private fun configureChartAppearance(chart: LineChart) {
+        // Включаем Touch и жесты
         chart.setTouchEnabled(true)
         chart.isDragEnabled = true
         chart.setScaleEnabled(true)
         chart.description.isEnabled = false
 
+        // Настройки легенды
         val legend = chart.legend
         legend.isEnabled = true
         legend.textColor = Color.BLACK
 
+        // Настройки оси X
         val xAxis: XAxis = chart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.textColor = Color.BLACK
@@ -48,18 +66,24 @@ class MPAndroidChartManager(private val context: Context) {
         xAxis.gridColor = Color.LTGRAY
         xAxis.axisLineColor = Color.BLACK
 
+        // Настройки левой оси Y
         val leftAxis: YAxis = chart.axisLeft
         leftAxis.textColor = Color.BLACK
         leftAxis.setDrawGridLines(true)
         leftAxis.gridColor = Color.LTGRAY
         leftAxis.axisLineColor = Color.BLACK
 
+        // Отключаем правую ось Y
         val rightAxis: YAxis = chart.axisRight
         rightAxis.isEnabled = false
     }
 
     /**
-     * Генерирует и добавляет данные синусоиды.
+     * Генерирует демонстрационные данные синусоиды и добавляет их на график.
+     *
+     * @param chart График для добавления данных
+     * @param lineColor Цвет линии
+     * @param title Название набора данных
      */
     private fun addSineWaveData(chart: LineChart, lineColor: Int, title: String) {
         val entries = ArrayList<Entry>()
@@ -72,17 +96,19 @@ class MPAndroidChartManager(private val context: Context) {
         val dataSet = LineDataSet(entries, title)
         dataSet.color = lineColor
         dataSet.lineWidth = 2f
-        dataSet.setDrawCircles(false)
-        dataSet.setDrawValues(false)
+        dataSet.setDrawCircles(false)   // Не рисуем точки
+        dataSet.setDrawValues(false)    // Не рисуем значения
         dataSet.mode = LineDataSet.Mode.LINEAR
 
         val lineData = LineData(dataSet)
         chart.data = lineData
-        chart.invalidate()
+        chart.invalidate()  // Обновляем отображение
     }
 
     /**
-     * очистка графика
+     * Очищает график от всех данных.
+     *
+     * @param chart График для очистки
      */
     fun clearChart(chart: LineChart) {
         chart.clear()
@@ -90,7 +116,10 @@ class MPAndroidChartManager(private val context: Context) {
     }
 
     /**
-     * Настройка и активирование синхронизации двух графиков.
+     * Настраивает синхронизацию графика с другими.
+     * При масштабировании или прокрутке синхронизирует все зарегистрированные графики.
+     *
+     * @param chart График для настройки синхронизации
      */
     private fun setupSynchronization(chart: LineChart) {
         chart.setOnChartGestureListener(object : OnChartGestureListener {
@@ -98,26 +127,26 @@ class MPAndroidChartManager(private val context: Context) {
                 me: MotionEvent?,
                 lastPerformedGesture: ChartTouchListener.ChartGesture?
             ) {
-                // ничего
+                // Не используется
             }
 
             override fun onChartGestureEnd(
                 me: MotionEvent?,
                 lastPerformedGesture: ChartTouchListener.ChartGesture?
             ) {
-                // ничего
+                // Не используется
             }
 
             override fun onChartLongPressed(me: MotionEvent?) {
-                // ничего
+                // Не используется
             }
 
             override fun onChartDoubleTapped(me: MotionEvent?) {
-                // ничего
+                // Не используется
             }
 
             override fun onChartSingleTapped(me: MotionEvent?) {
-                // ничего
+                // Не используется
             }
 
             override fun onChartFling(
@@ -126,7 +155,7 @@ class MPAndroidChartManager(private val context: Context) {
                 velocityX: Float,
                 velocityY: Float
             ) {
-                // ничего
+                // Не используется
             }
 
             override fun onChartScale(
@@ -152,7 +181,10 @@ class MPAndroidChartManager(private val context: Context) {
     }
 
     /**
-     * Синхронизировать другие графики по оси X
+     * Синхронизирует все зарегистрированные графики по оси X.
+     * Копирует масштаб и позицию исходного графика на все остальные.
+     *
+     * @param sourceChart Исходный график, с которого копируются параметры
      */
     private fun synchronizeCharts(sourceChart: LineChart) {
         if (synchronizedCharts.size < 2 || isSyncing) return
@@ -161,16 +193,19 @@ class MPAndroidChartManager(private val context: Context) {
 
         synchronizedCharts.forEach { targetChart ->
             if (targetChart != sourceChart) {
-
                 // Получаем текущий масштаб и позицию исходного графика
                 val scaleX = sourceChart.viewPortHandler.scaleX
                 val transX = sourceChart.viewPortHandler.transX
 
-                // Задаём текущий масштаб и позицию целевому графику
-                targetChart.viewPortHandler.refresh(Matrix().apply { 
-                    setScale(scaleX, 1f)
-                    postTranslate(transX, 0f)
-                }, targetChart, true)
+                // Применяем масштаб и позицию к целевому графику
+                targetChart.viewPortHandler.refresh(
+                    Matrix().apply { 
+                        setScale(scaleX, 1f)
+                        postTranslate(transX, 0f)
+                    }, 
+                    targetChart, 
+                    true
+                )
 
                 targetChart.invalidate()
             }
@@ -180,7 +215,9 @@ class MPAndroidChartManager(private val context: Context) {
     }
 
     /**
-     * Регистрация графика для синхронизации
+     * Регистрирует график для участия в синхронизации.
+     *
+     * @param chart График для регистрации
      */
     fun registerChartForSync(chart: LineChart) {
         if (!synchronizedCharts.contains(chart)) {

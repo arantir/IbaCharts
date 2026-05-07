@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-65:12
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:1-59:12
 MERGED from [:presentation] /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:data] /home/alexander/prj/android/IbaCharts/data/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f2f6db739f1fa598109f19d921748fe1/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
@@ -48,12 +48,16 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/alexander/.gradle/cach
 	xmlns:android
 		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:5-80
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:4:5-80
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:22-77
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:4:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:22-78
 application
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:9:5-63:19
-INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:9:5-63:19
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:7:5-57:19
+INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:7:5-57:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
@@ -71,81 +75,81 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/alexa
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:8:9-41
 	android:theme
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:11:9-65
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:9:9-65
 activity#com.example.mychartsapp.presentation.ui.MainActivity
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:12:9-19:20
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:11:9-18:20
 	android:exported
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:14:13-36
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:13:13-36
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:13:13-80
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:12:13-80
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:15:13-18:29
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:14:13-17:29
 action#android.intent.action.MAIN
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:17:17-77
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:17:27-74
-activity#com.example.mychartsapp.NormalChartActivity
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:21:9-23:40
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:27-74
+activity#com.example.mychartsapp.presentation.ui.NormalChartActivity
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:20:9-22:40
 	android:exported
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:23:13-37
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:22:13-48
-activity#com.example.mychartsapp.IBAChartActivity
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:25:9-50:20
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:21:13-87
+activity#com.example.mychartsapp.presentation.ui.IBAChartActivity
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:24:9-44:20
 	android:exported
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:27:13-36
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:26:13-36
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:26:13-45
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:25:13-84
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:mimeType:application/octet-stream+data:scheme:content
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:13-37:29
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:27:13-34:29
 action#android.intent.action.VIEW
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:25-66
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.DEFAULT
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:17-76
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:29:17-76
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:27-73
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:29:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:17-78
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:17-78
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:27-75
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:27-75
 data
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
 	android:host
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:36:23-39
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:23-39
 	android:scheme
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:35:23-47
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:23-47
 	android:pathPattern
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:46:23-53
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:41:23-53
 	android:mimeType
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:23-66
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:23-66
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:mimeType:*/*+data:pathPattern:.*\\.dat+data:scheme:file
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:40:13-48:29
-activity#com.example.mychartsapp.SettingsActivity
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:52:9-54:40
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:35:13-43:29
+activity#com.example.mychartsapp.presentation.ui.SettingsActivity
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:46:9-48:40
 	android:exported
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:54:13-37
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:48:13-37
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:53:13-45
-activity#com.example.mychartsapp.NormalChartSettingsActivity
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:56:9-58:40
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:47:13-84
+activity#com.example.mychartsapp.presentation.ui.NormalChartSettingsActivity
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:50:9-52:40
 	android:exported
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:58:13-37
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:57:13-56
-activity#com.example.mychartsapp.IBAChartSettingsActivity
-ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:60:9-62:40
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:51:13-95
+activity#com.example.mychartsapp.presentation.ui.IBAChartSettingsActivity
+ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:54:9-56:40
 	android:exported
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:62:13-37
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:56:13-37
 	android:name
-		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:61:13-53
+		ADDED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:55:13-92
 uses-sdk
 INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml

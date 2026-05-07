@@ -2,204 +2,203 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.mychartsapp"
 4    android:versionCode="1"
-5    android:versionName="0.603" >
+5    android:versionName="0.613" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:5-80
-11-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:22-77
-12
-13    <permission
-13-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
-14        android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
-15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
-16
-17    <uses-permission android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Убрали MANAGE_EXTERNAL_STORAGE - это опасное разрешение, используйте только если необходимо -->
-17-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
-18    <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
-19    <application
-19-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:9:5-63:19
-20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
-21        android:debuggable="true"
-22        android:extractNativeLibs="true"
-23        android:label="@string/app_name"
-23-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:10:9-41
-24        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-24-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:11:9-65
-25        <activity
-25-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:12:9-19:20
-26            android:name="com.example.mychartsapp.presentation.ui.MainActivity"
-26-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:13:13-80
-27            android:exported="true" >
-27-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:14:13-36
-28            <intent-filter>
-28-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:15:13-18:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:17-69
-29-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:17:17-77
-31-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:17:27-74
-32            </intent-filter>
-33        </activity>
-34        <activity
-34-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:21:9-23:40
-35            android:name="com.example.mychartsapp.NormalChartActivity"
-35-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:22:13-48
-36            android:exported="false" />
-36-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:23:13-37
-37        <activity
-37-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:25:9-50:20
-38            android:name="com.example.mychartsapp.IBAChartActivity"
-38-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:26:13-45
-39            android:exported="true" >
-39-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:27:13-36
-40
-41            <!-- Сохраняем intent-filter для открытия .dat файлов -->
-42            <intent-filter>
-42-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:13-37:29
-43                <action android:name="android.intent.action.VIEW" />
-43-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
-43-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:25-66
-44
-45                <category android:name="android.intent.category.DEFAULT" />
-45-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:17-76
-45-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:27-73
-46                <category android:name="android.intent.category.BROWSABLE" />
-46-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:17-78
-46-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:27-75
-47
-48                <data android:mimeType="application/octet-stream" />
-48-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-48-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:23-66
-49                <data android:scheme="content" />
-49-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-49-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:35:23-47
-50                <data android:host="*" />
-50-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-50-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:36:23-39
-51            </intent-filter>
-52
-53            <!-- Альтернативный фильтр для прямой работы с файлами -->
-54            <intent-filter>
-54-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:40:13-48:29
-55                <action android:name="android.intent.action.VIEW" />
-55-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
-55-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:25-66
+11-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:4:5-80
+11-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:4:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:5-81
+12-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:5:22-78
+13
+14    <permission
+14-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+15        android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+15-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+16        android:protectionLevel="signature" />
+16-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+17
+18    <uses-permission android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+18-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+19
+20    <application
+20-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:7:5-57:19
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.13.0] /home/alexander/.gradle/caches/8.14.4/transforms/605fdb3c9d4d421921ed3eecc016c860/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
+22        android:debuggable="true"
+23        android:extractNativeLibs="true"
+24        android:label="@string/app_name"
+24-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:8:9-41
+25        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+25-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:9:9-65
+26        <activity
+26-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:11:9-18:20
+27            android:name="com.example.mychartsapp.presentation.ui.MainActivity"
+27-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:12:13-80
+28            android:exported="true" >
+28-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:13:13-36
+29            <intent-filter>
+29-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:14:13-17:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:15:17-69
+30-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:15:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:17-77
+32-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:16:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity
+35-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:20:9-22:40
+36            android:name="com.example.mychartsapp.presentation.ui.NormalChartActivity"
+36-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:21:13-87
+37            android:exported="false" />
+37-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:22:13-37
+38        <activity
+38-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:24:9-44:20
+39            android:name="com.example.mychartsapp.presentation.ui.IBAChartActivity"
+39-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:25:13-84
+40            android:exported="true" >
+40-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:26:13-36
+41            <intent-filter>
+41-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:27:13-34:29
+42                <action android:name="android.intent.action.VIEW" />
+42-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:28:17-69
+42-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:28:25-66
+43
+44                <category android:name="android.intent.category.DEFAULT" />
+44-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:29:17-76
+44-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:29:27-73
+45                <category android:name="android.intent.category.BROWSABLE" />
+45-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:17-78
+45-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:27-75
+46
+47                <data android:mimeType="application/octet-stream" />
+47-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+47-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:23-66
+48                <data android:scheme="content" />
+48-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+48-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:23-47
+49                <data android:host="*" />
+49-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+49-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:23-39
+50            </intent-filter>
+51            <intent-filter>
+51-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:35:13-43:29
+52                <action android:name="android.intent.action.VIEW" />
+52-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:28:17-69
+52-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:28:25-66
+53
+54                <category android:name="android.intent.category.DEFAULT" />
+54-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:29:17-76
+54-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:29:27-73
+55                <category android:name="android.intent.category.BROWSABLE" />
+55-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:17-78
+55-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:30:27-75
 56
-57                <category android:name="android.intent.category.DEFAULT" />
-57-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:17-76
-57-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:27-73
-58                <category android:name="android.intent.category.BROWSABLE" />
-58-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:17-78
-58-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:27-75
-59
-60                <data android:scheme="file" />
-60-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-60-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:35:23-47
-61                <data android:host="*" />
-61-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-61-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:36:23-39
-62                <data android:pathPattern=".*\\.dat" />
-62-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-62-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:46:23-53
-63                <data android:mimeType="*/*" />
-63-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:17-69
-63-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:34:23-66
-64            </intent-filter>
-65        </activity>
+57                <data android:scheme="file" />
+57-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+57-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:32:23-47
+58                <data android:host="*" />
+58-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+58-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:33:23-39
+59                <data android:pathPattern=".*\\.dat" />
+59-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+59-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:41:23-53
+60                <data android:mimeType="*/*" />
+60-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:17-69
+60-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:31:23-66
+61            </intent-filter>
+62        </activity>
+63        <activity
+63-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:46:9-48:40
+64            android:name="com.example.mychartsapp.presentation.ui.SettingsActivity"
+64-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:47:13-84
+65            android:exported="false" />
+65-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:48:13-37
 66        <activity
-66-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:52:9-54:40
-67            android:name="com.example.mychartsapp.SettingsActivity"
-67-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:53:13-45
+66-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:50:9-52:40
+67            android:name="com.example.mychartsapp.presentation.ui.NormalChartSettingsActivity"
+67-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:51:13-95
 68            android:exported="false" />
-68-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:54:13-37
+68-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:52:13-37
 69        <activity
-69-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:56:9-58:40
-70            android:name="com.example.mychartsapp.NormalChartSettingsActivity"
-70-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:57:13-56
+69-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:54:9-56:40
+70            android:name="com.example.mychartsapp.presentation.ui.IBAChartSettingsActivity"
+70-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:55:13-92
 71            android:exported="false" />
-71-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:58:13-37
-72        <activity
-72-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:60:9-62:40
-73            android:name="com.example.mychartsapp.IBAChartSettingsActivity"
-73-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:61:13-53
-74            android:exported="false" />
-74-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:62:13-37
-75
-76        <provider
-76-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-77            android:name="androidx.startup.InitializationProvider"
-77-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
-78            android:authorities="com.example.mychartsapp.androidx-startup"
-78-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
-79            android:exported="false" >
-79-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+71-->/home/alexander/prj/android/IbaCharts/app/src/main/AndroidManifest.xml:56:13-37
+72
+73        <provider
+73-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+74            android:name="androidx.startup.InitializationProvider"
+74-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+75            android:authorities="com.example.mychartsapp.androidx-startup"
+75-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+76            android:exported="false" >
+76-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+77            <meta-data
+77-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+78-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+79                android:value="androidx.startup" />
+79-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
 80            <meta-data
-80-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-81-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+80-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+81                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+81-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
 82                android:value="androidx.startup" />
-82-->[androidx.emoji2:emoji2:1.3.0] /home/alexander/.gradle/caches/8.14.4/transforms/2098903e2212caae421eaf1e4b2f7625/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+82-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
 83            <meta-data
-83-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-84-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
 85                android:value="androidx.startup" />
-85-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/alexander/.gradle/caches/8.14.4/transforms/f5c65452b7d9fea74543e92a1d7e0c11/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-86            <meta-data
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-88                android:value="androidx.startup" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-89        </provider>
-90
-91        <receiver
-91-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-92            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-93            android:directBootAware="false"
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-94            android:enabled="true"
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-95            android:exported="true"
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-96            android:permission="android.permission.DUMP" >
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+86        </provider>
+87
+88        <receiver
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+89            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+90            android:directBootAware="false"
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+91            android:enabled="true"
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+92            android:exported="true"
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+93            android:permission="android.permission.DUMP" >
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+95                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+96            </intent-filter>
 97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-98                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+98                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
 99            </intent-filter>
 100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-101                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+101                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
 102            </intent-filter>
 103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-104                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+104                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
 105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-107                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/alexander/.gradle/caches/8.14.4/transforms/177fdb0f80cd3c9d0395c63d8e63f28d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-108            </intent-filter>
-109        </receiver>
-110    </application>
-111
-112</manifest>
+106        </receiver>
+107    </application>
+108
+109</manifest>

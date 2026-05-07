@@ -1,4 +1,4 @@
-#Wed May 06 15:04:05 YEKT 2026
+#Thu May 07 10:08:13 YEKT 2026
 base.0=/home/alexander/prj/android/IbaCharts/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/alexander/prj/android/IbaCharts/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/home/alexander/prj/android/IbaCharts/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

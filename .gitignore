@@ -1,0 +1,113 @@
+# Gradle files
+.gradle/
+build/
+app/build/
+data/build/
+domain/build/
+presentation/build/
+*/build/
+
+# Local configuration file
+local.properties
+
+# IntelliJ IDEA / Android Studio files
+*.iml
+.idea/
+*.iws
+*.ipr
+out/
+.cxx/
+.idea_modules/
+
+# Keystore files
+*.jks
+*.keystore
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Android generated files
+*.pyc
+*.class
+*.dex
+*.exp
+*.log
+*.temp
+*.tmp
+
+# Build outputs (keep APK files)
+!**/*.apk
+
+# Capture files
+captures/
+.settings/
+bin/
+gen/
+
+# Navigation editor
+navigation/
+
+# Android Studio
+.idea/libraries/
+.idea/caches/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/datasources.xml
+.idea/dataSources.xml
+.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Generated files
+*.met
+.project
+.classpath
+.factorypath
+
+# Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Google Services
+google-services.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+*.orig
+*.rej
+*.old
+
+# Patch files
+*.patch
+
+# Kotlin
+.kotlin/
+*/build/
+.cache/
+
+# Detekt
+detekt/

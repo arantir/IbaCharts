@@ -2,20 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mychartsapp"
     android:versionCode="1"
-    android:versionName="0.603" >
+    android:versionName="0.613" >
 
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="34" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <permission
         android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Убрали MANAGE_EXTERNAL_STORAGE - это опасное разрешение, используйте только если необходимо -->
-    <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="com.example.mychartsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -32,13 +33,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.mychartsapp.NormalChartActivity"
+            android:name="com.example.mychartsapp.presentation.ui.NormalChartActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.mychartsapp.IBAChartActivity"
+            android:name="com.example.mychartsapp.presentation.ui.IBAChartActivity"
             android:exported="true" >
-
-            <!-- Сохраняем intent-filter для открытия .dat файлов -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -49,8 +48,6 @@
                 <data android:scheme="content" />
                 <data android:host="*" />
             </intent-filter>
-
-            <!-- Альтернативный фильтр для прямой работы с файлами -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -64,13 +61,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.mychartsapp.SettingsActivity"
+            android:name="com.example.mychartsapp.presentation.ui.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.mychartsapp.NormalChartSettingsActivity"
+            android:name="com.example.mychartsapp.presentation.ui.NormalChartSettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.mychartsapp.IBAChartSettingsActivity"
+            android:name="com.example.mychartsapp.presentation.ui.IBAChartSettingsActivity"
             android:exported="false" />
 
         <provider
