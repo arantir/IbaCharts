@@ -3,3 +3,15 @@ cd /home/alexander/prj/android/IbaCharts && gradle :app:assembleDebug
 
 # Путь к готовому APK после успешной сборки:
 /home/alexander/prj/android/IbaCharts/app/build/outputs/apk/debug/
+
+# Команда для запуска всех тестов
+cd /home/alexander/prj/android/IbaCharts && gradle test
+
+# Результаты тестов domain модуля:
+/home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/index.html
+
+# Результаты тестов presentation модуля:
+/home/alexander/prj/android/IbaCharts/presentation/build/reports/tests/test/index.html
+
+# Результаты тестов data модуля:
+/home/alexander/prj/android/IbaCharts/data/build/reports/tests/test/index.html

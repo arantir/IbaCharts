@@ -12,8 +12,8 @@ import androidx.core.content.ContextCompat
 import com.example.mychartsapp.presentation.R
 import com.example.mychartsapp.presentation.ui.IBAChart.MPAndroidChartManager
 import com.example.mychartsapp.presentation.ui.utils.DebugHelper
-import com.example.mychartsapp.presentation.ui.utils.IBAParser
-import com.example.mychartsapp.presentation.ui.models.PDAFile
+import com.example.mychartsapp.data.utils.IBAParser
+import com.example.mychartsapp.domain.models.PDAFile
 import com.github.mikephil.charting.charts.LineChart
 
 /**

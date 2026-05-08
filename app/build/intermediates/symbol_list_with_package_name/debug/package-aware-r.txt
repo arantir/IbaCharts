@@ -784,7 +784,6 @@ id parentPanel
 id progress_circular
 id progress_horizontal
 id radio
-id report_drawn
 id right_icon
 id right_side
 id saveBtn

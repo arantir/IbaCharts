@@ -111,3 +111,125 @@ fastlane/readme.md
 
 # Detekt
 detekt/
+
+# Все сгенерированные и временные файлы Android Gradle
+*.compiler.options
+*.dex
+*.ap_
+*.flat
+*.jar
+*.aar
+*.class
+*.json
+*.txt
+*.bin
+*.properties
+*.xml
+*.html
+*.log
+*.lock
+*.tag
+*.timestamp
+
+# Папки с компилированным кодом
+**/generated/
+**/intermediates/
+**/outputs/
+**/tmp/
+**/snapshot/
+**/libs/
+**/kotlin/
+**/classes/
+
+# Файлы отчетов
+**/reports/
+
+# Файлы кэша
+**/caches/
+**/cacheable/
+**/classpath-snapshot/
+**/local-state/
+
+# Zip кэши
+**/zip-cache/
+
+# Декс файлы
+**/dex/
+
+# Файлы ресурсов
+**/merged_res/
+**/merged_manifests/
+**/packaged_res/
+**/processed_res/
+
+# Бинарные файлы десагара
+**/desugar_graph/
+
+# Все compiler.options файлы
+*.compiler.options
+
+# Проблемы отчет
+**/problems-report.html
+
+# Все файлы в корне build папки
+build/
+**/build/*
+
+# Файлы из cmdCompile.txt
+cmdCompile.txt
+
+# Инкрементальные файлы
+**/incremental/
+**/merge-state/
+**/executionHistory/
+**/fileHashes/
+**/fileSnapshots.bin
+**/taskHistory.bin
+**/buildHistory.bin
+
+# Android Studio специфичные файлы
+.idea/navEditor.xml
+.idea/gradle.xml
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/deploymentTargetDropDown.xml
+.idea/codeStyles/
+.idea/runConfigurations/
+
+# Градиент враппер (если используешь)
+gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.jar
+
+# Локальные файлы
+.lint/
+.lint-cache/
+.lint-results*
+
+# Специфичные для твоего проекта
+**/build/kotlin/
+**/build/generated/
+**/build/intermediates/
+**/build/tmp/
+**/build/outputs/logs/
+**/build/reports/
+
+# Все файлы в корне проекта, начинающиеся с цифр или временные
+[0-9]*.compiler.options
+*\_temp*
+
+# Кеш компиляции Kotlin
+.kotlin/
+.kotlin/**/*
+*/build/kotlin/*
+*/build/snapshot/*
+
+# Медиа файлы кэша
+**/pngs/
+**/resValues/
+**/res/merged/
+**/res/pngs/
+
+*.lock
+*.bin
+*.dex

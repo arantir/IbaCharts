@@ -1,4 +1,4 @@
-package com.example.mychartsapp.presentation.ui.models
+package com.example.mychartsapp.domain.models
 
 import java.io.RandomAccessFile
 
