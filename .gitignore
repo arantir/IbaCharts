@@ -1,62 +1,101 @@
-# Gradle files
+# ============================================
+# Gradle и файлы сборки
+# ============================================
+
+# Системные папки Gradle (локальный кеш, не должен быть в репозитории)
 .gradle/
+
+# Папки сборки всех модулей
 build/
+*/build/
 app/build/
 data/build/
 domain/build/
 presentation/build/
-*/build/
 
-# Local configuration file
+# Локальные настройки Gradle (пути, ключи)
 local.properties
+gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.jar
 
-# IntelliJ IDEA / Android Studio files
-*.iml
+# Временные и бинарные файлы сборки
+*.dex
+*.ap_
+*.flat
+*.jar
+*.aar
+*.class
+*.lock
+*.bin
+*.log
+*.temp
+*.tmp
+*.exp
+*.met
+*.tag
+*.timestamp
+*.compiler.options
+
+# Отчеты о сборке и тестах
+**/reports/
+**/problems-report.html
+
+# Кеши и промежуточные файлы
+**/caches/
+**/cacheable/
+**/classpath-snapshot/
+**/local-state/
+**/zip-cache/
+**/executionHistory/
+**/fileHashes/
+**/fileSnapshots.bin
+**/taskHistory.bin
+**/buildHistory.bin
+**/incremental/
+**/merge-state/
+
+# Сгенерированные исходники и ресурсы
+**/generated/
+**/intermediates/
+**/outputs/
+**/tmp/
+**/snapshot/
+**/libs/
+**/kotlin/
+**/classes/
+**/dex/
+**/desugar_graph/
+
+# Ресурсы и их кеши
+**/merged_res/
+**/merged_manifests/
+**/packaged_res/
+**/processed_res/
+**/pngs/
+**/resValues/
+**/res/merged/
+**/res/pngs/
+
+# Специфичные файлы сборки
+cmdCompile.txt
+*.compiler.options
+[0-9]*.compiler.options
+*\_temp*
+
+# ============================================
+# IDE и редакторы
+# ============================================
+
+# IntelliJ IDEA / Android Studio
 .idea/
+.idea_modules/
+*.iml
 *.iws
 *.ipr
 out/
 .cxx/
-.idea_modules/
 
-# Keystore files
-*.jks
-*.keystore
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.swp
-*.swo
-*~
-
-# Android generated files
-*.pyc
-*.class
-*.dex
-*.exp
-*.log
-*.temp
-*.tmp
-
-# Build outputs (keep APK files)
-!**/*.apk
-
-# Capture files
-captures/
-.settings/
-bin/
-gen/
-
-# Navigation editor
-navigation/
-
-# Android Studio
+# Конфиги Android Studio
 .idea/libraries/
 .idea/caches/
 .idea/modules.xml
@@ -73,12 +112,60 @@ navigation/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/deploymentTargetDropDown.xml
+.idea/codeStyles/
+.idea/runConfigurations/
 
-# Generated files
-*.met
+# Другие IDE
 .project
 .classpath
 .factorypath
+.settings/
+bin/
+gen/
+
+# ============================================
+# Системные файлы ОС
+# ============================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+*~
+*.swp
+*.swo
+
+# ============================================
+# Kotlin
+# ============================================
+
+.kotlin/
+.cache/
+
+# ============================================
+# Android специфичные
+# ============================================
+
+# Файлы подписи
+*.jks
+*.keystore
+
+# Логи и краш-репорты
+captures/
+*.log
 
 # Crashlytics
 com_crashlytics_export_strings.xml
@@ -89,147 +176,48 @@ fabric.properties
 # Google Services
 google-services.json
 
+# Навигация
+navigation/
+
+# ============================================
 # Fastlane
+# ============================================
+
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
+fastlane/screenshots/
+fastlane/test_output/
 fastlane/readme.md
 
-# Version control
+# ============================================
+# Системы контроля версий и патчи
+# ============================================
+
 *.orig
 *.rej
 *.old
-
-# Patch files
 *.patch
 
-# Kotlin
-.kotlin/
-*/build/
-.cache/
+# ============================================
+# Вспомогательные инструменты
+# ============================================
 
-# Detekt
+# Detekt (статический анализ)
 detekt/
 
-# Все сгенерированные и временные файлы Android Gradle
-*.compiler.options
-*.dex
-*.ap_
-*.flat
-*.jar
-*.aar
-*.class
-*.json
-*.txt
-*.bin
-*.properties
-*.xml
-*.html
-*.log
-*.lock
-*.tag
-*.timestamp
-
-# Папки с компилированным кодом
-**/generated/
-**/intermediates/
-**/outputs/
-**/tmp/
-**/snapshot/
-**/libs/
-**/kotlin/
-**/classes/
-
-# Файлы отчетов
-**/reports/
-
-# Файлы кэша
-**/caches/
-**/cacheable/
-**/classpath-snapshot/
-**/local-state/
-
-# Zip кэши
-**/zip-cache/
-
-# Декс файлы
-**/dex/
-
-# Файлы ресурсов
-**/merged_res/
-**/merged_manifests/
-**/packaged_res/
-**/processed_res/
-
-# Бинарные файлы десагара
-**/desugar_graph/
-
-# Все compiler.options файлы
-*.compiler.options
-
-# Проблемы отчет
-**/problems-report.html
-
-# Все файлы в корне build папки
-build/
-**/build/*
-
-# Файлы из cmdCompile.txt
-cmdCompile.txt
-
-# Инкрементальные файлы
-**/incremental/
-**/merge-state/
-**/executionHistory/
-**/fileHashes/
-**/fileSnapshots.bin
-**/taskHistory.bin
-**/buildHistory.bin
-
-# Android Studio специфичные файлы
-.idea/navEditor.xml
-.idea/gradle.xml
-.idea/compiler.xml
-.idea/jarRepositories.xml
-.idea/misc.xml
-.idea/deploymentTargetDropDown.xml
-.idea/codeStyles/
-.idea/runConfigurations/
-
-# Градиент враппер (если используешь)
-gradle-wrapper.jar
-gradle/wrapper/gradle-wrapper.jar
-
-# Локальные файлы
+# Линтеры
 .lint/
 .lint-cache/
 .lint-results*
 
-# Специфичные для твоего проекта
-**/build/kotlin/
-**/build/generated/
-**/build/intermediates/
-**/build/tmp/
-**/build/outputs/logs/
-**/build/reports/
+# ============================================
+# Файлы, которые НУЖНО сохранять (исключения)
+# ============================================
 
-# Все файлы в корне проекта, начинающиеся с цифр или временные
-[0-9]*.compiler.options
-*\_temp*
+# APK файлы (сохраняем, но лучше не хранить в Git из-за размера)
+!**/*.apk
 
-# Кеш компиляции Kotlin
-.kotlin/
-.kotlin/**/*
-*/build/kotlin/*
-*/build/snapshot/*
-
-# Медиа файлы кэша
-**/pngs/
-**/resValues/
-**/res/merged/
-**/res/pngs/
-
-*.lock
-*.bin
-*.dex
+# Gradle Wrapper (если используешь) — рекомендую хранить, но закомментировано
+# !gradle/wrapper/gradle-wrapper.jar
+# !gradlew
+# !gradlew.bat
