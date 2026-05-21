@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml:2:13-83
-INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml:2:13-83
+ADDED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml:2:13-83
+INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml:2:13-83
 	package
-		INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml
+		INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml
 	xmlns:android
-		ADDED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml:2:23-81
+		ADDED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml:2:23-81
 uses-sdk
-INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml reason: use-sdk injection requested
-INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml
-INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml
+INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml reason: use-sdk injection requested
+INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml
+INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml
 	android:targetSdkVersion
-		INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml
+		INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml
 	android:minSdkVersion
-		INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest17583831202625498966.xml
+		INJECTED from /home/alexander/prj/android/IbaCharts/presentation/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8233711859135958155.xml

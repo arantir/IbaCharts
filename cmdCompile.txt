@@ -4,12 +4,20 @@ cd /home/alexander/prj/android/IbaCharts && gradle :app:assembleDebug
 # Путь к готовому APK после успешной сборки:
 /home/alexander/prj/android/IbaCharts/app/build/outputs/apk/debug/
 
-# Команда для запуска всех тестов
-cd /home/alexander/prj/android/IbaCharts && gradle test
+# Команда для запуска всех unit тестов (domain + presentation)
+cd /home/alexander/prj/android/IbaCharts && gradle test :presentation:testDebugUnitTest
 
 # Результаты тестов domain модуля:
 /home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/index.html
+firefox /home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/index.html
 
 # Результаты тестов presentation модуля:
-/home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/index.html
-firefox /home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/index.html
+/home/alexander/prj/android/IbaCharts/presentation/build/reports/tests/testDebugUnitTest/index.html
+firefox /home/alexander/prj/android/IbaCharts/presentation/build/reports/tests/testDebugUnitTest/index.html
+
+# Команда для запуска UI тестов (нужен эмулятор или устройство)
+cd /home/alexander/prj/android/IbaCharts && gradle :app:connectedAndroidTest
+
+# Результаты UI тестов:
+/home/alexander/prj/android/IbaCharts/app/build/reports/androidTests/connected/index.html
+firefox /home/alexander/prj/android/IbaCharts/app/build/reports/androidTests/connected/index.html
