@@ -11,40 +11,75 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import com.example.mychartsapp.domain.models.*
 
-class IBAParser(private val context: Context? = null) {
+/**
+ * Парсер файлов формата PDA.
+ * 
+ * Обрабатывает файлы измерительных приборов, которые содержат:
+ * - Текстовую секцию с метаданными (заголовок, описание каналов)
+ * - Бинарную секцию с показаниями датчиков
+ * 
+ * Формат файла ожидается следующим:
+ * 1. Текстовая часть с параметрами (до маркера "endASCII:")
+ * 2. Бинарная часть с данными (после маркера "endASCII:")
+ */
+class IBAParser {
 
-    private fun copyToClipboard(text: String) {
-        context?.let {
-            try {
-                val clipboard = it.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                val clip = android.content.ClipData.newPlainText("Ошибка парсера PDA", text)
-                clipboard.setPrimaryClip(clip)
-            } catch (e: Exception) {
-                Log.e("IBAParser", "Ошибка копирования в буфер", e)
-            }
+    /**
+     * Копирует текст в системный буфер обмена (Clipboard) для отладки
+     * 
+     * @param context Контекст Android для доступа к ClipboardManager
+     * @param text Текст для копирования в буфер обмена
+     */
+    private fun copyToClipboard(context: Context, text: String) {
+        try {
+            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = android.content.ClipData.newPlainText("Ошибка парсера PDA", text)
+            clipboard.setPrimaryClip(clip)
+        } catch (e: Exception) {
+            Log.e("IBAParser", "Ошибка копирования в буфер", e)
         }
     }
 
-    fun parseFile(filePath: String, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile? {
+    /**
+     * Основной метод для парсинга PDA файла
+     * 
+     * Автоматически определяет тип пути и делегирует соответствующему приватному методу:
+     * - URI (content://, file://) → parseFileFromUri()
+     * - Обычный путь → parseFileFromPath()
+     * 
+     * @param filePath Путь к файлу (абсолютный путь, content URI или file URI)
+     * @param context Контекст Android для доступа к ContentResolver (может быть null для тестов)
+     * @param progressCallback Коллбэк для отслеживания прогресса парсинга.
+     *                         Передает (current, total, statusMessage)
+     * @return PDAFile с распарсенными данными или null в случае ошибки
+     */
+    fun parseFile(filePath: String, context: Context? = null, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile? {
         return try {
             if (filePath.startsWith("content://") || filePath.startsWith("file://")) {
-                parseFileFromUri(Uri.parse(filePath), progressCallback)
+                if (context == null) {
+                    Log.e("IBAParser", "Для URI требуется Context")
+                    return null
+                }
+                parseFileFromUri(context, Uri.parse(filePath), progressCallback)
             } else {
-                parseFileFromPath(filePath, progressCallback)
+                parseFileFromPath(filePath, context, progressCallback)
             }
         } catch (e: Exception) {
-            handleCriticalError(e, "parseFile")
+            handleCriticalError(context, e, "parseFile")
             null
         }
     }
 
-    private fun parseFileFromUri(uri: Uri, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile? {
+    /**
+     * Парсинг PDA файла из URI (для Android ContentResolver)
+     * 
+     * @param context Контекст Android
+     * @param uri URI файла в формате content:// или file://
+     * @param progressCallback Коллбэк прогресса парсинга
+     * @return PDAFile или null при ошибке
+     */
+    private fun parseFileFromUri(context: Context, uri: Uri, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile? {
         return try {
-            if (context == null) {
-                handleCriticalError(IllegalStateException("Контекст не доступен"), "parseFileFromUri")
-                return null
-            }
-
             val contentResolver: ContentResolver = context.contentResolver
             val inputStream: InputStream? = contentResolver.openInputStream(uri)
 
@@ -73,18 +108,21 @@ class IBAParser(private val context: Context? = null) {
                 parseDataFromBuffer(fileBuffer, progressCallback)
             }
         } catch (e: Exception) {
-            handleCriticalError(e, "parseFileFromUri общая ошибка")
+            handleCriticalError(context, e, "parseFileFromUri")
             null
         }
     }
 
-    private fun parseFileFromPath(filePath: String, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile? {
+    /**
+     * Парсинг PDA файла из обычного файлового пути
+     * 
+     * @param filePath Абсолютный или относительный путь к файлу
+     * @param context Контекст Android (опционально, для копирования ошибок в буфер)
+     * @param progressCallback Коллбэк прогресса парсинга
+     * @return PDAFile или null при ошибке
+     */
+    private fun parseFileFromPath(filePath: String, context: Context? = null, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile? {
         return try {
-            if (context != null) {
-                val uri = if (filePath.startsWith("/")) Uri.parse("file://$filePath") else Uri.parse(filePath)
-                return parseFileFromUri(uri, progressCallback)
-            }
-
             val file = java.io.File(filePath)
             if (!file.exists()) {
                 throw IllegalArgumentException("ERR_STAGE_1: Файл не существует: $filePath")
@@ -98,11 +136,19 @@ class IBAParser(private val context: Context? = null) {
 
             parseDataFromBuffer(fileBuffer, progressCallback)
         } catch (e: Exception) {
-            handleCriticalError(e, "parseFileFromPath")
+            handleCriticalError(context, e, "parseFileFromPath")
             null
         }
     }
 
+    /**
+     * Основная логика парсинга из массива байт
+     * 
+     * @param fileBuffer Полное содержимое файла в виде ByteArray
+     * @param progressCallback Коллбэк прогресса парсинга
+     * @return PDAFile с распарсенными данными
+     * @throws IllegalArgumentException При ошибках формата файла
+     */
     private fun parseDataFromBuffer(fileBuffer: ByteArray, progressCallback: ((Int, Int, String) -> Unit)? = null): PDAFile {
         val fileContent = String(fileBuffer, Charsets.ISO_8859_1)
 
@@ -138,6 +184,15 @@ class IBAParser(private val context: Context? = null) {
         return PDAFile(header, channels, channelData)
     }
 
+    /**
+     * Парсинг бинарных данных с поддержкой прогресса
+     * 
+     * @param binaryData Бинарная часть файла (после endASCII:)
+     * @param channels Список каналов с их параметрами
+     * @param frames Ожидаемое количество фреймов из заголовка
+     * @param progressCallback Коллбэк для обновления прогресса
+     * @return Map, где ключ = ID канала, значение = ChannelData
+     */
     private fun parseBinaryDataWithProgress(
         binaryData: ByteArray,
         channels: List<PDAChannel>,
@@ -232,7 +287,14 @@ class IBAParser(private val context: Context? = null) {
         return channelData
     }
 
-    private fun handleCriticalError(e: Throwable, location: String) {
+    /**
+     * Обрабатывает критические ошибки парсинга
+     * 
+     * @param context Контекст Android (опционально, для копирования в буфер)
+     * @param e Исключение, которое произошло
+     * @param location Метод или место, где произошла ошибка
+     */
+    private fun handleCriticalError(context: Context?, e: Throwable, location: String) {
         val errorMsg = "КРИТИЧЕСКАЯ ОШИБКА PDA ПАРСЕРА\n" +
                 "Место: $location\n" +
                 "Тип: ${e.javaClass.name}\n" +
@@ -240,11 +302,18 @@ class IBAParser(private val context: Context? = null) {
                 "Время: ${java.util.Date()}\n\n" +
                 "Стек: ${e.stackTraceToString()}"
         Log.e("IBAParser", errorMsg)
-        copyToClipboard(errorMsg)
+        context?.let { copyToClipboard(it, errorMsg) }
     }
 
+    /**
+     * Парсит заголовок файла из текстовой секции
+     * 
+     * @param textContent Текстовая часть файла (до endASCII:)
+     * @return PDAHeader с распарсенными параметрами
+     */
     private fun parseHeader(textContent: String): PDAHeader {
         val lines = textContent.lines()
+        
         var clock = 0.04
         var type = "real"
         var startTime = ""
@@ -287,6 +356,12 @@ class IBAParser(private val context: Context? = null) {
         return PDAHeader(clock, type, startTime, frames, version, modules, groups)
     }
 
+    /**
+     * Парсит описание каналов из текстовой секции
+     * 
+     * @param textContent Текстовая часть файла (до endASCII:)
+     * @return Отсортированный по ID список каналов
+     */
     private fun parseChannels(textContent: String): List<PDAChannel> {
         val channels = mutableListOf<PDAChannel>()
         val lines = textContent.lines()
@@ -298,8 +373,14 @@ class IBAParser(private val context: Context? = null) {
                     try {
                         val id = line.substringAfter("beginchannel:").trim().toInt()
                         currentChannel = PDAChannel(
-                            id = id, name = "", unit = "", dataType = "bit",
-                            minScale = 0.0, maxScale = 1.0, group = "", timeBase = 0.1
+                            id = id, 
+                            name = "", 
+                            unit = "", 
+                            dataType = "bit",
+                            minScale = 0.0, 
+                            maxScale = 1.0, 
+                            group = "", 
+                            timeBase = 0.1
                         )
                     } catch (_: NumberFormatException) { }
                 }
@@ -327,21 +408,50 @@ class IBAParser(private val context: Context? = null) {
         return channels.sortedBy { it.id }
     }
 
+    /**
+     * Масштабирует сырое значение в физическую величину
+     * 
+     * @param value Сырое значение
+     * @param minScale Минимальное физическое значение
+     * @param maxScale Максимальное физическое значение
+     * @param rawMin Минимальное сырое значение (зависит от типа)
+     * @param rawMax Максимальное сырое значение (зависит от типа)
+     * @return Масштабированное значение
+     */
     private fun scaleValue(value: Double, minScale: Double, maxScale: Double, rawMin: Double, rawMax: Double): Double {
         if (maxScale == minScale || rawMax == rawMin) return value
         return minScale + (value - rawMin) * (maxScale - minScale) / (rawMax - rawMin)
     }
 
+    /**
+     * Возвращает минимальное значение для заданного типа данных
+     */
     private fun getMinForType(dataType: String): Double = when (dataType.lowercase()) {
-        "bit" -> 0.0; "byte", "int8" -> 0.0; "int16", "word" -> 0.0
-        "int32", "dword" -> 0.0; else -> 0.0
+        "bit" -> 0.0
+        "byte", "int8" -> 0.0
+        "int16", "word" -> 0.0
+        "int32", "dword" -> 0.0
+        else -> 0.0
     }
 
+    /**
+     * Возвращает максимальное значение для заданного типа данных
+     */
     private fun getMaxForType(dataType: String): Double = when (dataType.lowercase()) {
-        "bit" -> 1.0; "byte", "int8" -> 255.0; "int16", "word" -> 65535.0
-        "int32", "dword" -> 4294967295.0; else -> 65535.0
+        "bit" -> 1.0
+        "byte", "int8" -> 255.0
+        "int16", "word" -> 65535.0
+        "int32", "dword" -> 4294967295.0
+        else -> 65535.0
     }
 
+    /**
+     * Вспомогательный класс для хранения информации о канале во время парсинга
+     */
     private data class ChannelInfo(val channel: PDAChannel, val size: Int)
+
+    /**
+     * Вспомогательный класс для временного хранения данных во время парсинга
+     */
     private data class ChannelDataLists(val timestamps: MutableList<Double>, val values: MutableList<Double>)
 }

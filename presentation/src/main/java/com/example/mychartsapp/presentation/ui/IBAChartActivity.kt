@@ -32,7 +32,7 @@ class IBAChartActivity : AppCompatActivity() {
     // Менеджер для работы с графиками MPAndroidChart
     private lateinit var mpAndroidChartManager: MPAndroidChartManager
     // Парсер для файлов формата IBA/PDA
-    private lateinit var parser: IBAParser
+    private val parser = IBAParser()
     // Текущий загруженный PDA файл
     private var currentPDAFile: PDAFile? = null
 
@@ -88,24 +88,20 @@ class IBAChartActivity : AppCompatActivity() {
         try {
             setContentView(R.layout.activity_iba_chart)
             DebugHelper.log(this, "IBAChart", "STEP 3: setContentView OK")
-            
-            // Инициализация парсера
-            parser = IBAParser(this)
-            DebugHelper.log(this, "IBAChart", "STEP 4: parser OK")
 
             // Инициализация менеджеров и графиков
             initializeManagers()
-            DebugHelper.log(this, "IBAChart", "STEP 5: initializeManagers OK")
+            DebugHelper.log(this, "IBAChart", "STEP 4: initializeManagers OK")
             initializeCharts()
-            DebugHelper.log(this, "IBAChart", "STEP 6: initializeCharts OK")
+            DebugHelper.log(this, "IBAChart", "STEP 5: initializeCharts OK")
             setupUI()
-            DebugHelper.log(this, "IBAChart", "STEP 7: setupUI OK")
+            DebugHelper.log(this, "IBAChart", "STEP 6: setupUI OK")
             setupAllCharts()
-            DebugHelper.log(this, "IBAChart", "STEP 8: setupAllCharts OK")
+            DebugHelper.log(this, "IBAChart", "STEP 7: setupAllCharts OK")
 
             // Обработка Intent (для открытия файла извне)
             handleIntent(intent)
-            DebugHelper.log(this, "IBAChart", "STEP 9: onCreate END SUCCESS")
+            DebugHelper.log(this, "IBAChart", "STEP 8: onCreate END SUCCESS")
         } catch (e: Exception) {
             DebugHelper.log(this, "IBAChart", "ERROR: ${e.message}")
             DebugHelper.log(this, "IBAChart", "STACK: ${e.stackTraceToString()}")
