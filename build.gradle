@@ -1,16 +1,24 @@
 buildscript {
     ext {
+        // Версии
         junit_version = '5.10.0'
         mockk_version = '1.13.8'
         coroutines_test_version = '1.7.3'
+        
+        // Compose версии
+        kotlin_version = "2.1.0"
+        agp_version = "8.7.3"
     }
+    
     repositories {
         google()
         mavenCentral()
     }
+    
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+        classpath "com.android.tools.build:gradle:$agp_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:compose-compiler-gradle-plugin:$kotlin_version"
     }
 }
 

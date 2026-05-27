@@ -26,8 +26,15 @@ firefox /home/alexander/prj/android/IbaCharts/presentation/build/reports/tests/t
 # 3. UI ТЕСТЫ (требуется подключенное устройство)
 # ============================================
 
+# очистка adb истории
+adb logcat -c
+
 # Запуск UI тестов на устройстве
-cd /home/alexander/prj/android/IbaCharts && gradle :app:connectedDebugAndroidTest --info
+cd /home/alexander/prj/android/IbaCharts && gradle :app:connectedDebugAndroidTest
+
+# просмотр логов
+adb logcat -d | grep -E "com.example.mychartsapp"
+adb logcat -d -v time | awk '/alwaysPasses/,/deletePackageX/'
 
 # Результаты UI тестов:
 firefox /home/alexander/prj/android/IbaCharts/app/build/reports/androidTests/connected/index.html

@@ -1,18 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
 }
 
 android {
     namespace "com.example.mychartsapp"
-    compileSdk 34
+    compileSdk 35
     
     defaultConfig {
         applicationId "com.example.mychartsapp"
-        minSdk 21
-        targetSdk 34
+        minSdk 23
+        targetSdk 35
         versionCode 1
-        versionName "0.622"
+        versionName "0.627"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     
@@ -30,6 +31,14 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
+    
+    buildFeatures {
+        compose true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = '1.5.14'
+    }
 }
 
 dependencies {
@@ -37,13 +46,28 @@ dependencies {
     implementation project(':domain')
     implementation project(':data')
     
-    // UI тесты
+    implementation platform('androidx.compose:compose-bom:2026.05.01')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.navigation:navigation-compose:2.8.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6'
+    implementation 'androidx.activity:activity-compose:1.9.3'
+    
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    
     androidTestImplementation project(':presentation')
-    androidTestImplementation 'androidx.appcompat:appcompat:1.6.1'
-    androidTestImplementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test:rules:1.5.0'
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
+    
+    androidTestImplementation platform('androidx.compose:compose-bom:2026.05.01')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
 }
