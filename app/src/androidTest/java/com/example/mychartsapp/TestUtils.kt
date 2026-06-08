@@ -1,26 +1,37 @@
 package com.example.mychartsapp
 
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.compose.ui.test.SemanticsNodeInteraction
+import androidx.compose.ui.test.junit4.AndroidComposeTestRule
+import androidx.compose.ui.test.onNodeWithText
+import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.example.mychartsapp.presentation.MainActivity
 
 /**
- * Вспомогательный объект для UI тестов.
- * Содержит предварительно сконфигурированные ViewMatchers для кнопок.
- * 
- * Позволяет использовать например: TestUtils.normalChartBtn.perform(click())
- * вместо длинной записи с полным путём к R.id.
- * 
- * Примечание: В текущих тестах не используется, но может пригодиться.
+ * Вспомогательные утилиты для Compose UI тестов.
  */
 object TestUtils {
-    // Кнопка "Обычный график"
-    val normalChartBtn = androidx.test.espresso.Espresso.onView(withId(com.example.mychartsapp.presentation.R.id.normalChartBtn))
     
-    // Кнопка "График ИБА"
-    val ibaChartBtn = androidx.test.espresso.Espresso.onView(withId(com.example.mychartsapp.presentation.R.id.ibaChartBtn))
+    /**
+     * Расширение для AndroidComposeTestRule, добавляющее удобные методы.
+     */
+    fun AndroidComposeTestRule<ActivityScenarioRule<MainActivity>, MainActivity>.clickOnButton(buttonText: String) {
+        onNodeWithText(buttonText).performClick()
+    }
     
-    // Кнопка "Настройки"
-    val settingsBtn = androidx.test.espresso.Espresso.onView(withId(com.example.mychartsapp.presentation.R.id.settingsBtn))
+    /**
+     * Проверяет, что текущий экран - главное меню.
+     */
+    fun AndroidComposeTestRule<ActivityScenarioRule<MainActivity>, MainActivity>.assertOnMainScreen() {
+        onNodeWithText("Обычный график").assertIsDisplayed()
+        onNodeWithText("График ИБА").assertIsDisplayed()
+        onNodeWithText("Настройки").assertIsDisplayed()
+        onNodeWithText("Выход").assertIsDisplayed()
+    }
     
-    // Кнопка "Выход" (не используется в тестах, так как после её нажатия приложение закрывается)
-    val exitBtn = androidx.test.espresso.Espresso.onView(withId(com.example.mychartsapp.presentation.R.id.exitBtn))
+    /**
+     * Проверяет, что текущий экран - экран с кнопкой "Назад".
+     */
+    fun AndroidComposeTestRule<ActivityScenarioRule<MainActivity>, MainActivity>.assertOnScreenWithBackButton() {
+        onNodeWithText("← Назад").assertIsDisplayed()
+    }
 }

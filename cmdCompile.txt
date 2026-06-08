@@ -1,20 +1,25 @@
 # ============================================
-# 1. КОМПИЛЯЦИЯ И УСТАНОВКА
+# КОМПИЛЯЦИЯ И УСТАНОВКА
 # ============================================
 
-# Сборка APK и Установка APK на устройство
+# Сборка APK и установка на устройство
 cd /home/alexander/prj/android/IbaCharts && gradle :app:assembleDebug && adb install -r app/build/outputs/apk/debug/app-debug.apk
+
+# Очистка проекта
+cd /home/alexander/prj/android/IbaCharts && gradle clean
+
+# Сборка APK с выводом проблем
+cd /home/alexander/prj/android/IbaCharts && gradle :app:assembleDebug && adb install --info --stacktrace
 
 # Путь к готовому APK
 /home/alexander/prj/android/IbaCharts/app/build/outputs/apk/debug/
 
-
 # ============================================
-# 2. UNIT ТЕСТЫ (без устройства)
+# UNIT ТЕСТЫ (без устройства)
 # ============================================
 
-# Запуск всех unit тестов
-cd /home/alexander/prj/android/IbaCharts && gradle test :presentation:testDebugUnitTest
+# Запуск всех unit тестов (все модули)
+cd /home/alexander/prj/android/IbaCharts && gradle test
 
 # Результаты domain тестов:
 firefox /home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/index.html
@@ -23,18 +28,27 @@ firefox /home/alexander/prj/android/IbaCharts/domain/build/reports/tests/test/in
 firefox /home/alexander/prj/android/IbaCharts/presentation/build/reports/tests/testDebugUnitTest/index.html
 
 # ============================================
-# 3. UI ТЕСТЫ (требуется подключенное устройство)
+# UI ТЕСТЫ (требуется подключенное устройство)
 # ============================================
-
-# очистка adb истории
-adb logcat -c
 
 # Запуск UI тестов на устройстве
 cd /home/alexander/prj/android/IbaCharts && gradle :app:connectedDebugAndroidTest
 
-# просмотр логов
-adb logcat -d | grep -E "com.example.mychartsapp"
-adb logcat -d -v time | awk '/alwaysPasses/,/deletePackageX/'
-
 # Результаты UI тестов:
 firefox /home/alexander/prj/android/IbaCharts/app/build/reports/androidTests/connected/index.html
+
+# ============================================
+# ПРОСМОТР ЛОГОВ (требуется подключенное устройство)
+# ============================================
+
+# Очистка adb истории
+adb logcat -c
+
+# Просмотр логов приложения
+adb logcat -d | grep -E "com.example.mychartsapp"
+
+# Просмотр логов с временными метками
+adb logcat -d -v time | grep -E "com.example.mychartsapp"
+
+# Просмотр логов IBAChartActivity
+adb logcat -d | grep -E "IBAChart"
